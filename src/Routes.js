@@ -8,15 +8,15 @@ const Routes = [
     sidebarName: 'Home',
     navbarName: 'Home',
     icon: HomeTwoTone,
-    component: Home
+    component: Home,
   },
   {
     path: '/help',
     sidebarName: 'Help',
     navbarName: 'Help',
     icon: HelpOutlineTwoTone,
-    component: Help
-  }
+    component: Help,
+  },
 ];
 
 export default Routes;

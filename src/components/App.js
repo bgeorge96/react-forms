@@ -4,12 +4,8 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Toolbar from '@material-ui/core/Toolbar';
 // import Typography from '@material-ui/core/Typography';
 import AppNav from './AppNav';
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route
-  } from "react-router-dom";
-import routes from '../Routes'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import routes from '../Routes';
 
 const drawerWidth = 240;
 
@@ -40,18 +36,26 @@ export default function App() {
   const classes = useStyles();
 
   return (
-      <Router>
-        <div className={classes.root}>
+    <Router>
+      <div className={classes.root}>
         <CssBaseline />
-        <AppNav classes={classes}  />
-            <main className={classes.content}>
-                <Toolbar />
-                <Switch>
-                  { routes.map((routeInfo,key) => {
-                    console.log(routeInfo.path,routeInfo.component.className);
-                    return (<Route path={routeInfo.path} component={routeInfo.component} key={key} />)
-                  })}
-                    {/* <Route path='/help'>
+        <AppNav classes={classes} />
+        <main className={classes.content}>
+          <Toolbar />
+          <Switch>
+            {routes.map((routeInfo, key) => {
+              console.log('route', routeInfo.path);
+              console.log('comp', routeInfo.component);
+              return (
+                <Route
+                  exact
+                  path={routeInfo.path}
+                  component={routeInfo.component}
+                  key={key}
+                />
+              );
+            })}
+            {/* <Route path='/help'>
                         <Typography paragraph>
                             Help Page!
                         </Typography>
@@ -61,9 +65,9 @@ export default function App() {
                             Home Page!
                         </Typography>
                     </Route> */}
-                </Switch>
-            </main>
-        </div>
-      </Router>
+          </Switch>
+        </main>
+      </div>
+    </Router>
   );
 }
