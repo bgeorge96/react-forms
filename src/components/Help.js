@@ -1,10 +1,12 @@
 import React from 'react';
+import { Typography } from '@material-ui/core';
+
 
 
 class Help extends React.Component {
     render(){
         return(
-            <p>this is Help</p>
+            <Typography>this is Help</Typography>
         )
     }
 }

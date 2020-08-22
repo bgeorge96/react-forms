@@ -1,6 +1,6 @@
 import { HelpOutlineTwoTone, HomeTwoTone } from '@material-ui/icons';
-import Home from './components/Home';
-import Help from './components/Help';
+import Home from '../components/Home';
+import Help from '../components/Help';
 
 const Routes = [
   {
@@ -16,7 +16,7 @@ const Routes = [
     navbarName: 'Help',
     icon: HelpOutlineTwoTone,
     component: Help,
-  },
+  }
 ];
 
 export default Routes;

@@ -9,7 +9,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import MenuList from '@material-ui/core/MenuList';
 import MenuItem from '@material-ui/core/MenuItem';
 import {withRouter,Link} from 'react-router-dom';
-import routes from '../Routes';
+import routes from '../routes/Routes';
 
 
 class AppNav extends React.Component {
@@ -29,7 +29,7 @@ class AppNav extends React.Component {
                 <AppBar position="fixed" className={this.props.classes.appBar}>
                     <Toolbar>
                     <Typography variant="h6" noWrap>
-                        Brandon's Application
+                        Application
                     </Typography>
                     </Toolbar>
                 </AppBar>

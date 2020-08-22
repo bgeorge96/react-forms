@@ -5,7 +5,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 // import Typography from '@material-ui/core/Typography';
 import AppNav from './AppNav';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import routes from '../Routes';
+import routes from '../routes/Routes';
 
 const drawerWidth = 240;
 
@@ -44,8 +44,6 @@ export default function App() {
           <Toolbar />
           <Switch>
             {routes.map((routeInfo, key) => {
-              console.log('route', routeInfo.path);
-              console.log('comp', routeInfo.component);
               return (
                 <Route
                   exact
@@ -55,16 +53,6 @@ export default function App() {
                 />
               );
             })}
-            {/* <Route path='/help'>
-                        <Typography paragraph>
-                            Help Page!
-                        </Typography>
-                    </Route>
-                    <Route path='/'>
-                        <Typography paragraph>
-                            Home Page!
-                        </Typography>
-                    </Route> */}
           </Switch>
         </main>
       </div>
