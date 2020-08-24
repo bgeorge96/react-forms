@@ -27,19 +27,22 @@ class ContextForm extends React.Component {
         const validOrg = context.organization !== '';
         const validProj = context.project !== '';
         if(validToken && validOrg){
+            console.log(this.props)
             if(validProj){
                 // project is defined
                 console.log('valid project')
-                return;
             }else{
                 // project not defined
                 console.log('no project defined')
-                return;
             }
+            this.props.updateContextValidity(true);
+            return;
         }
         
         // return error
         console.log('raise error')
+        this.props.updateContextValidity(false);
+        return;
     }
 
     render(){

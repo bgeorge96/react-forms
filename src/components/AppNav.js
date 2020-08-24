@@ -10,6 +10,7 @@ import MenuList from '@material-ui/core/MenuList';
 import MenuItem from '@material-ui/core/MenuItem';
 import {withRouter,Link} from 'react-router-dom';
 import routes from '../routes/Routes';
+// import dynamic_routes from '../routes/DynamicRoutes';
 
 
 class AppNav extends React.Component {

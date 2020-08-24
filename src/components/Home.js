@@ -1,5 +1,6 @@
 import React from 'react';
 import ContextForm from './ContextForm';
+import ContextInputs from './ContextInputs';
 import { Typography } from '@material-ui/core';
 
 
@@ -13,10 +14,17 @@ class Home extends React.Component {
                 token: "",
                 organization: "",
                 project: ""
-            }
+            },
+            validContext: false
         }
 
         this.setNewState = this.setNewState.bind(this);
+        this.updateContextValidity = this.updateContextValidity.bind(this);
+    }
+
+    updateContextValidity(value){
+        // handle throwing error
+        this.setState({validContext: value})
     }
 
     setNewState(subState){
@@ -29,7 +37,15 @@ class Home extends React.Component {
         return(
             <React.Fragment>
                 <Typography>Welcome! This is the entry for helper 2.0!</Typography>
-                <ContextForm context={this.state.context} updateValues={this.setNewState} />
+                { this.state.validContext 
+                    ? <ContextInputs />
+                    : <ContextForm 
+                        context={this.state.context} 
+                        updateValues={this.setNewState} 
+                        validContext={this.state.validContext} 
+                        updateContextValidity={this.updateContextValidity}
+                        />
+                }
             </React.Fragment>
         )
     }
